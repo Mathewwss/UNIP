@@ -230,6 +230,7 @@ public class T{
 		// Criando LinkedHashMap
 		LinkedHashMap<String, String> mths = new LinkedHashMap<String, String>();
 
+		// Adicionando elementos
 		mths.put("JN", "Junho");
 		mths.put("JA", "Janeiro");
 		mths.put("MR", "Março");
@@ -237,6 +238,7 @@ public class T{
 		mths.put("NV", "Novembro");
 		mths.put("OT", "Outubro");
 
+		// Mostrando LinkedHashMap
 		System.out.println();
 		System.out.println(mths);
 		
@@ -244,9 +246,11 @@ public class T{
 		System.out.println();
 		System.out.println("    Alterando elementos...");
 
+		// Alterando elementos
 		mths.put("JN", "Janeiro");
 		mths.put("JA", "Julho");
 
+		// Mostrando LinkedHashMap
 		System.out.println();
 		System.out.println(mths);
 
@@ -254,12 +258,13 @@ public class T{
 		System.out.println();
 		System.out.println("    Removendo elementos...");
 
+		// Removendo elementos
 		mths.remove("DZ", mths.get("DZ"));
 		mths.remove("OT", mths.get("OT"));
 
+		// Mostrando LinkedHashMap
 		System.out.println();
 		System.out.println(mths);
-	
 	}
 }
 
