@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 // ----------------------------- CLASSES ---------------------------- //
 
-// Operações da calculadore
+// Operações da calculadora
 public class Operacoes{
 	float num1;
 	float num2;

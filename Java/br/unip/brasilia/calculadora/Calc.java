@@ -17,9 +17,7 @@ import java.util.Scanner;
 // ----------------------------- CLASSES ---------------------------- //
 
 public class Calc{
-	// Menu
-	public static String Menu(){
-		int count = 1;
+	public static String LeValida(){
 		ArrayList<String> opcoes = new ArrayList<String>();
 
 		// Adicionando opções
@@ -29,55 +27,69 @@ public class Calc{
 		opcoes.add("*");
 		opcoes.add("/");
 
-		while (true){
-			count += 1;
+	
+		Scanner scn = new Scanner(System.in);
+		String opc = scn.nextLine();
 
-			// Número máximo de erros
-			if (count == 15){
-				return "15";
-			}
-
-			// Mostrando ao usuário
-			System.out.println();
-			System.out.println("Opções:");
-			System.out.println("    0 - Sair");
-			System.out.println("    + - Soma");
-			System.out.println("    - - Subtracao");
-			System.out.println("    * - Multiplicacao");
-			System.out.println("    / - Divisao");
-
-			// Obtendo escolha do usuário
-			System.out.println();
-			System.out.print(": ");
-			Scanner scn = new Scanner(System.in);
-			String opc = scn.nextLine();
-
-			// Opção inválida
-			if (! opcoes.contains(opc)){
-			
-				System.out.println();
-				System.out.println("Opção inválida");
-			}
-
-			// Opção válida
-			else{
-				return opc;
-			}
+		// Verificando se a opção é válida
+		if (opcoes.contains(opc)){
+			return opc;
+		}
+		else{
+			return null;
 		}
 	}
 
+	// Menu
+	public static void Menu(){
+		// Opções disponíveis
+		System.out.println();
+		System.out.println("Opções:");
+		System.out.println("    0 - Sair");
+		System.out.println("    + - Soma");
+		System.out.println("    - - Subtracao");
+		System.out.println("    * - Multiplicacao");
+		System.out.println("    / - Divisao");
+	}
+
 	public static void main(String[] args){
-		String menu = Menu();
+		int count = 0;
+		String math = "";
+		String escolha;
 
-		// Selecionando opções
-		switch (menu){
-			// Erro
-			case "15":
+		do{
+			// Verificando tentativas
+			if (count == 10){
 				System.out.println();
-				System.out.println("Desisto....");
-				
-				break;
+				System.out.println("Desisto...");
+				System.exit(1);
+			}
 
+			// Mostrando menu
+			Menu();
+
+			System.out.println();
+			System.out.print(": ");
+
+			// Obtendo escolha do usuário
+			escolha = LeValida();
+
+			// Verificando escolha do usuário
+			if (escolha != null){
+				math = escolha;
+				break;
+			}
+			else{
+				System.out.println();
+				System.out.println("Opção Inválida!");
+			}
+
+			// Próxima tentativa
+			count++;
+		}while(count < 11);
+
+		// Selecionando operações
+		switch (math){
 			// Soma
 			case "+":
 				String msgsum;
