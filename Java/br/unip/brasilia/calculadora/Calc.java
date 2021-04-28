@@ -174,8 +174,6 @@ public class Calc{
 
 			case "/":
 				ArrayList<Float> div = new ArrayList<Float>();
-				String msgdiv1;
-				String msgdiv2;
 
 				// Obtendo numeros
 				Scanner ndiv = new Scanner(System.in);
@@ -189,16 +187,47 @@ public class Calc{
 				Operacoes divs = new Operacoes(ndiva, ndivb);
 				div = divs.Divisao();
 
-				// Montando mensagens
-				msgdiv1 = "A / B = " + ndiva + " / " + ndivb;
-				msgdiv1 += " = " + div.get(1);
-				msgdiv2 = "B / A = " + ndivb + " / " + ndiva;
-				msgdiv2 += " = " + div.get(0);
+				if (ndiva == 0){
 
-				// Mostrando ao usuário
-				System.out.println();
-				System.out.println(msgdiv1);
-				System.out.println(msgdiv2);
+					// a = 0 | b = 0
+					if (ndivb  == 0){
+						System.out.println();
+						System.out.println("Divisão impossível!");
+					}
+
+					// a = 0 | b != 0
+					else{
+						String msgdiv;
+						msgdiv = "A / B = " + ndiva + " / " + ndivb;
+						msgdiv += " = " + div.get(0);
+						System.out.println();
+						System.out.println(msgdiv);
+					}
+				}
+				else{
+
+					// a != 0 | b = 0
+					if (ndivb  == 0){
+						String msgdiv;
+						msgdiv = "B / A = " + ndivb + " / " + ndiva;
+						msgdiv += " = " + div.get(0);
+						System.out.println();
+						System.out.println(msgdiv);
+					}
+
+					// a != 0 | b != 0
+					else{
+						String msgdiv1;
+						String msgdiv2;
+						msgdiv1 = "A / B = " + ndiva + " / " + ndivb;
+						msgdiv1 += " = " + div.get(1);
+						msgdiv2 = "B / A = " + ndivb + " / " + ndiva;
+						msgdiv2 += " = " + div.get(0);
+						System.out.println();
+						System.out.println(msgdiv1);
+						System.out.println(msgdiv2);
+					}
+				}
 
 				// Saindo
 				break;
