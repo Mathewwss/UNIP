@@ -1,0 +1,23 @@
+# APS - 2021.1 - Java
+- Partes
+	- [ ] Capa
+	- [ ] Folha de Rosto
+	- [ ] Folha de Aprovação
+	- [x] Resumo (Português)
+	- [x] Resumo (Inglês)
+	- [ ] Sumário
+	- [x] Objetivo do Trabalho - 1 até 2 páginas
+	- [ ] Introdução - 2 até 4 páginas
+	- [ ] Regras e Funcionamento do jogo - 4 até 8 páginas
+	- [ ] Plano de Desenvolvimento - 5 até 15 páginas
+	- [ ] Projeto - 3 até 8 páginas
+	- [ ] Linha de Código - 1 até 10 páginas
+	- [ ] Bibliografia
+- Definição
+	- Regras e funcionamento
+		- Regras do jogo (conceito gerais).
+	- Plano de desenvolvimento
+		- Elemento e ferramentas utilizadas.
+	- Projeto
+		- Estrutura e módulos que serão desenvolvidos no programa.
+
